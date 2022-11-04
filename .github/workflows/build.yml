@@ -24,13 +24,13 @@ jobs:
       - name: Run code coverage report
         run: mvn jacoco:report
       - name: Add coverage to PR
-          id: jacoco
-          uses: madrapps/jacoco-report@v1.3
-          with:
-            paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-            token: ${{ secrets.GITHUB_TOKEN }}
-            min-coverage-overall: 40
-            min-coverage-changed-files: 60
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.3
+        with:
+          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
       - name: Run code coverage check
         run: mvn clean verify
 
