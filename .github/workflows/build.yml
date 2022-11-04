@@ -1,6 +1,10 @@
 name: Java CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
@@ -17,4 +21,9 @@ jobs:
         run: mvn install -DskipTests
       - name: Run tests with Maven
         run: mvn test
+      - name: Run code coverage report
+          run: mvn jacoco:report
+      - name: Run code coverage check
+          run: mvn clean verify
+
 
