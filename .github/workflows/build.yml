@@ -22,8 +22,8 @@ jobs:
       - name: Run tests with Maven
         run: mvn test
       - name: Run code coverage report
-          run: mvn jacoco:report
+        run: mvn jacoco:report
       - name: Run code coverage check
-          run: mvn clean verify
+        run: mvn clean verify
 
 
