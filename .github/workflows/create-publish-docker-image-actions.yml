@@ -1,16 +1,6 @@
 name: Java CI
 
-<<<<<<< HEAD
 on: [push]
-=======
-on:
-  push:
-    branches: ['main']
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
->>>>>>> 8121e1d7466cf06b2d2a4ffbe2c8e55ab26b765d
 
 jobs:
   build:
