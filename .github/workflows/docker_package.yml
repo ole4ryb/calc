@@ -1,4 +1,4 @@
-name: Release
+name: Docker Image Pipeline
 on:
   workflow_run:
     workflows: ["Java CI"]
@@ -9,7 +9,7 @@ on:
 jobs:
   on-success:
       runs-on: ubuntu-latest
-
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
       steps:
         - uses: actions/checkout@v3
 
